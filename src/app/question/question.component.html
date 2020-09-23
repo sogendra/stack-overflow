@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+<ng-container *ngFor="let question of questions">
+    <h4> Question Title: {{question.title}}</h4>
+    <p> Modified Date : {{question.last_edit_date}}</p>
+    <a (click)="handleUserNameClick(question.owner.user_id)">{{question.owner.display_name}}</a>
+    <p> votes : {{question.score}}</p>
+    <p> answers : {{question.answer_count}}</p>
+    <p> views : {{question.view_count}}</p>
+    <p> bounty : {{question.bounty_amount}}</p>
+    <ng-container *ngFor="let tag of question.tags" >
+        <p>{{tag}}</p>
+    </ng-container>
+
+</ng-container>

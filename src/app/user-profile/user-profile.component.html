@@ -1,0 +1,22 @@
+<h2>User Profile</h2>
+<div *ngIf="userDetail">
+    <p>Image</p>
+    <img [src]="userDetail.profile_image">
+
+    <p>{{userDetail.reputation}} Reputation</p>
+    <p>{{userDetail.badge_counts.silver}} silver</p>
+    <p>{{userDetail.badge_counts.bronze}} bronze</p>
+    <p>{{userDetail.badge_counts.gold}} gold</p>
+    <p>Name: {{userDetail.display_name}}</p>
+    <p>Location: {{userDetail.location}}</p>
+    <p>Website url: {{userDetail.website_url}}</p>
+</div>
+
+<h2>Top Tags</h2>
+<div>
+    <ul *ngFor="let tag of userTags">
+        <li>{{tag.name}} - score : {{tag.count}}</li>
+    </ul>
+</div>
+
+<app-question [questions]="topQuestions" [title]="'Top Questions'"></app-question>
